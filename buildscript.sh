@@ -14,9 +14,14 @@ else
   REPO=$2
 fi
 
+if [ -z $3 ]; then
+  DIST="lucid"
+else
+  DIST=$3
+fi
+
 PACKAGE_NAME="yavdr-${PACKAGE}"
 PACKAGE_VERSION="10000"
-DIST="lucid"
 YAVDR_VERSION="1."
 VERSION_SUFFIX="-yavdr~${DIST}" #
 
@@ -72,8 +77,11 @@ dch -v "${PACKAGE_VERSION}${VERSION_SUFFIX}" "New Upstream Snapshot" --distribut
 
 echo " --- debuild"
 debuild -S -sa > /dev/null
-
 cd ..
+
+dput ppa:traxanos/yavdr-$REPO "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.changes"
+
+
 
 #rm $GITHUB_REPO -rf
 #rm $ORIG_FILE

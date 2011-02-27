@@ -41,6 +41,7 @@ echo " ---- git version ${GIT_VERSION}"
 cd ..
 
 VERSION_SUFFIX="1yavdr-${GIT_VERSION}~${DIST}"
+VERSION_SUFFIX="1yavdr1"
 
 # cleanup
 if [ -d $PACKET_NAME ]; then

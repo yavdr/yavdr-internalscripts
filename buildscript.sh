@@ -23,7 +23,7 @@ fi
 PACKAGE_NAME="yavdr-${PACKAGE}"
 PACKAGE_VERSION="10000"
 YAVDR_VERSION="1."
-VERSION_SUFFIX="-yavdr~${DIST}" #
+VERSION_SUFFIX="-0yavdr0~${DIST}" #
 
 echo " -- build packet ${PACKAGE_NAME} for ${REPO}"
 

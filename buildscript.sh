@@ -18,8 +18,8 @@ PACKAGE_NAME="yavdr-${PACKAGE}"
 PACKAGE_VERSION="10000"
 YAVDR_VERSION="0.3.0"
 DIST="lucid"
-PACKAGE_VERSION="${YAVDR_VERSION}-${PACKAGE_VERSION}"
-PACKAGE_NAME_VERSION="${PACKAGE_NAME}-${PACKAGE_VERSION}"
+PACKAGE_VERSION="${YAVDR_VERSION}.${PACKAGE_VERSION}"
+PACKAGE_NAME_VERSION="${PACKAGE_NAME}_${PACKAGE_VERSION}"
 
 echo " -- build packet ${PACKAGE_NAME} for ${REPO}"
 
@@ -60,7 +60,12 @@ tar czf $ORIG_FILE $PACKAGE_NAME_VERSION --exclude=".git" --exclude="debian"
 echo " --- create changelog for package"
 
 cd $PACKAGE_NAME_VERSION
-dch -v "${PACKAGE_NAME_VERSION}-${VERSION_SUFFIX}" "New Upstream Snapshot" --distribution=$DIST
+dch -v "${PACKAGE_VERSION}-${VERSION_SUFFIX}" "New Upstream Snapshot" --distribution=$DIST
+
+echo " --- debuild"
+debuild -S -sa > /dev/null
+
+cd ..
 
 #rm $GITHUB_REPO -rf
 #rm $ORIG_FILE

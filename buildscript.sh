@@ -18,6 +18,7 @@ PACKAGE_NAME="yavdr-${PACKAGE}"
 PACKAGE_VERSION="10000"
 DIST="lucid"
 YAVDR_VERSION="1."
+VERSION_SUFFIX="-yavdr~${DIST}" #
 
 echo " -- build packet ${PACKAGE_NAME} for ${REPO}"
 
@@ -39,7 +40,7 @@ PACKAGE_VERSION=`git rev-list --all | wc -l`
 echo " ---- package version ${PACKAGE_VERSION}"
 cd ..
 
-PACKAGE_VERSION="${YAVDR_VERSION}${PACKAGE_VERSION}-${REPO}-yavdr~${DIST}"
+PACKAGE_VERSION="${YAVDR_VERSION}${REPO}${PACKAGE_VERSION}"
 PACKAGE_NAME_VERSION="${PACKAGE_NAME}_${PACKAGE_VERSION}"
 
 
@@ -67,7 +68,7 @@ tar czf $ORIG_FILE $PACKAGE_NAME_VERSION --exclude=".git" --exclude="debian"
 echo " --- create changelog for package"
 
 cd $PACKAGE_NAME_VERSION
-dch -v "${PACKAGE_VERSION}-${VERSION_SUFFIX}" "New Upstream Snapshot" --distribution=$DIST
+dch -v "${PACKAGE_VERSION}${VERSION_SUFFIX}" "New Upstream Snapshot" --distribution=$DIST
 
 echo " --- debuild"
 debuild -S -sa > /dev/null

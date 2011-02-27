@@ -17,7 +17,7 @@ fi
 PACKAGE_NAME="yavdr-${PACKAGE}"
 PACKAGE_VERSION="10000"
 DIST="lucid"
-YAVDR_VERSION="0.4.0"
+YAVDR_VERSION="1."
 
 echo " -- build packet ${PACKAGE_NAME} for ${REPO}"
 
@@ -39,7 +39,7 @@ PACKAGE_VERSION=`git rev-list --all | wc -l`
 echo " ---- package version ${PACKAGE_VERSION}"
 cd ..
 
-PACKAGE_VERSION="${YAVDR_VERSION}+git${PACKAGE_VERSION}"
+PACKAGE_VERSION="${YAVDR_VERSION}${PACKAGE_VERSION}-${REPO}-yavdr~${DIST}"
 PACKAGE_NAME_VERSION="${PACKAGE_NAME}_${PACKAGE_VERSION}"
 
 
@@ -48,8 +48,6 @@ if [ -d $PACKAGE_NAME_VERSION ]; then
 fi
 
 mv "${PACKAGE_NAME}" "${PACKAGE_NAME_VERSION}"
-
-VERSION_SUFFIX="1yavdr1"
 
 # cleanup
 if [ -d $PACKET_NAME ]; then

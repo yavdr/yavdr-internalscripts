@@ -16,31 +16,39 @@ fi
 
 PACKAGE_NAME="yavdr-${PACKAGE}"
 PACKAGE_VERSION="10000"
-YAVDR_VERSION="0.3.0"
 DIST="lucid"
-PACKAGE_VERSION="${YAVDR_VERSION}.${PACKAGE_VERSION}"
-PACKAGE_NAME_VERSION="${PACKAGE_NAME}_${PACKAGE_VERSION}"
+YAVDR_VERSION="0.4.0"
 
 echo " -- build packet ${PACKAGE_NAME} for ${REPO}"
 
 mkdir -p /tmp/buildscript
 cd /tmp/buildscript
 
-if [ -d $PACKAGE_NAME_VERSION ]; then
-  rm $PACKAGE_NAME_VERSION -rf
+if [ -d $PACKAGE_NAME ]; then
+  rm $PACKAGE_NAME -rf
 fi
 
 # clone git repo
 echo " --- git clone git://github.com/yavdr/${PACKAGE_NAME}.git"
-git clone -q "git://github.com/yavdr/${PACKAGE_NAME}.git" "${PACKAGE_NAME_VERSION}"
+git clone -q "git://github.com/yavdr/${PACKAGE_NAME}.git" "${PACKAGE_NAME}"
+
 
 # look to git version
-cd $PACKAGE_NAME_VERSION
-GIT_VERSION=`git log --pretty='format:%H'`
-echo " ---- git version ${GIT_VERSION}"
+cd $PACKAGE_NAME
+PACKAGE_VERSION=`git rev-list --all | wc -l`
+echo " ---- package version ${PACKAGE_VERSION}"
 cd ..
 
-VERSION_SUFFIX="1yavdr-${GIT_VERSION}~${DIST}"
+PACKAGE_VERSION="${YAVDR_VERSION}+git${PACKAGE_VERSION}"
+PACKAGE_NAME_VERSION="${PACKAGE_NAME}_${PACKAGE_VERSION}"
+
+
+if [ -d $PACKAGE_NAME_VERSION ]; then
+  rm $PACKAGE_NAME_VERSION -rf
+fi
+
+mv "${PACKAGE_NAME}" "${PACKAGE_NAME_VERSION}"
+
 VERSION_SUFFIX="1yavdr1"
 
 # cleanup

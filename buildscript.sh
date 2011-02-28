@@ -80,7 +80,4 @@ cd ..
 
 dput ppa:traxanos/yavdr-$REPO "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.changes"
 
-
-
-#rm $GITHUB_REPO -rf
-#rm $ORIG_FILE
+rm "${PACKAGE_NAME_VERSION}*"

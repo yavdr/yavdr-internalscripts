@@ -53,8 +53,9 @@ if [ -d $PACKAGE_NAME_VERSION ]; then
 fi
 
 mv "${PACKAGE_NAME}" "${PACKAGE_NAME_VERSION}"
-
 # cleanup
+rm "${PACKAGE_NAME_VERSION}/.git" -rf
+
 if [ -d $PACKET_NAME ]; then
   rm $PACKET_NAME -rf
 fi

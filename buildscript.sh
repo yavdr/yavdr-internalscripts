@@ -80,4 +80,10 @@ cd ..
 
 dput ppa:traxanos/yavdr-$REPO "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.changes"
 
-rm "${PACKAGE_NAME_VERSION}*"
+rm -rf "${PACKAGE_NAME_VERSION}"
+rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}.debian.tar.gz"
+rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}.dsc"
+rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.ppa.upload"
+rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.build"
+rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.changes"
+rm -rf "${ORIG_FILE}"

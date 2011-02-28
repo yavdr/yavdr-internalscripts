@@ -52,7 +52,7 @@ if [ -d $PACKAGE_NAME_VERSION ]; then
   rm $PACKAGE_NAME_VERSION -rf
 fi
 
-mv "${PACKAGE_NAME}" "${PACKAGE_NAME_VERSION}"
+mv $PACKAGE_NAME $PACKAGE_NAME_VERSION
 # cleanup
 rm "${PACKAGE_NAME_VERSION}/.git" -rf
 
@@ -60,15 +60,15 @@ if [ -d $PACKET_NAME ]; then
   rm $PACKET_NAME -rf
 fi
 
-ORIG_FILE="${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}.orig.tar.gz"
+
+ORIG_FILE="${PACKAGE_NAME_VERSION}.orig.tar.gz"
 echo " --- create ${ORIG_FILE}"
 
 # cleanup
-if [ -f $ORIG_FILE ]; then
-  rm $ORIG_FILE -rf
+if [ ! -f $ORIG_FILE ]; then
+  tar czf $ORIG_FILE $PACKAGE_NAME_VERSION --exclude="debian"
 fi
 
-tar czf $ORIG_FILE $PACKAGE_NAME_VERSION --exclude="debian"
 
 echo " --- create changelog for package"
 
@@ -82,9 +82,9 @@ cd ..
 dput ppa:traxanos/yavdr-$REPO "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.changes"
 
 rm -rf "${PACKAGE_NAME_VERSION}"
+rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}.tar.gz"
 rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}.debian.tar.gz"
 rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}.dsc"
 rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.ppa.upload"
 rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.build"
 rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.changes"
-rm -rf "${ORIG_FILE}"

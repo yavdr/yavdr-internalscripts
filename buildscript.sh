@@ -60,7 +60,7 @@ if [ -d $PACKET_NAME ]; then
   rm $PACKET_NAME -rf
 fi
 
-ORIG_FILE="${PACKAGE_NAME_VERSION}.orig.tar.gz"
+ORIG_FILE="${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}.orig.tar.gz"
 echo " --- create ${ORIG_FILE}"
 
 # cleanup
@@ -68,7 +68,7 @@ if [ -f $ORIG_FILE ]; then
   rm $ORIG_FILE -rf
 fi
 
-tar czf $ORIG_FILE $PACKAGE_NAME_VERSION --exclude=".git" --exclude="debian"
+tar czf $ORIG_FILE $PACKAGE_NAME_VERSION --exclude="debian"
 
 echo " --- create changelog for package"
 

@@ -5,7 +5,7 @@ if [ -z $1 ]; then
   echo "no packet given"
   exit;
 else
-  PACKAGE=$1
+  PACKAGE_NAME=$1
 fi
 
 if [ -z $2 ]; then
@@ -20,7 +20,6 @@ else
   DIST=$3
 fi
 
-PACKAGE_NAME="yavdr-${PACKAGE}"
 PACKAGE_VERSION="10000"
 YAVDR_VERSION="1."
 VERSION_SUFFIX="-0yavdr0~${DIST}" #

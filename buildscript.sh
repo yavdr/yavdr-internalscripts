@@ -79,7 +79,11 @@ echo " --- debuild"
 debuild -S -sa > /dev/null
 cd ..
 
-dput ppa:traxanos/yavdr-$REPO "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.changes"
+if [ ${PACKAGE_NAME:0:5} -eq "yavdr" ]; then
+  dput ppa:yavdr/${REPO}-yavdr "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.changes"
+else
+  dput ppa:yavdr/${REPO}-vdr "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.changes"
+fi
 
 rm -rf "${PACKAGE_NAME_VERSION}"
 rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}.tar.gz"

@@ -79,7 +79,7 @@ echo " --- debuild"
 debuild -S -sa > /dev/null
 cd ..
 
-if [ ${PACKAGE_NAME:0:5} -eq "yavdr" ]; then
+if [ ${PACKAGE_NAME:0:5} = "yavdr" ]; then
   dput ppa:yavdr/${REPO}-yavdr "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.changes"
 else
   dput ppa:yavdr/${REPO}-vdr "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.changes"

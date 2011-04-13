@@ -86,7 +86,7 @@ else
 fi
 
 rm -rf "${PACKAGE_NAME_VERSION}"
-rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}.tar.gz"
+rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}.orig.tar.gz"
 rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}.debian.tar.gz"
 rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}.dsc"
 rm -rf "${PACKAGE_NAME_VERSION}${VERSION_SUFFIX}_source.ppa.upload"

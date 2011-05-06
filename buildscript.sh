@@ -74,7 +74,7 @@ fi
 echo " --- create changelog for package"
 
 cd $PACKAGE_NAME_VERSION
-dch -v "${PACKAGE_VERSION}${VERSION_SUFFIX}" "Autobuild - ${COMMIT_ID}" --distribution=$DIST
+dch -v "${PACKAGE_VERSION}${VERSION_SUFFIX}" "Autobuild - ${COMMIT_ID}" --distribution=$DIST -u medium
 
 echo " --- debuild"
 debuild -S -sa > /dev/null

@@ -41,6 +41,7 @@ git clone -q "git://github.com/yavdr/${PACKAGE_NAME}.git" "${PACKAGE_NAME}"
 # look to git version
 cd $PACKAGE_NAME
 PACKAGE_VERSION=`git rev-list --all | wc -l`
+COMMIT_ID=`git rev-parse HEAD`
 echo " ---- package version ${PACKAGE_VERSION}"
 cd ..
 
@@ -73,7 +74,7 @@ fi
 echo " --- create changelog for package"
 
 cd $PACKAGE_NAME_VERSION
-dch -v "${PACKAGE_VERSION}${VERSION_SUFFIX}" "New Upstream Snapshot" --distribution=$DIST
+dch -v "${PACKAGE_VERSION}${VERSION_SUFFIX}" "Autobuild - ${COMMIT_ID}" --distribution=$DIST
 
 echo " --- debuild"
 debuild -S -sa > /dev/null

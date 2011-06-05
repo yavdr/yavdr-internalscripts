@@ -6,9 +6,10 @@ for REPO in $REPOS
 do
   if [ ! -d $REPO ]; then
     git clone git@github.com:yavdr/${REPO}.git
+    git pull --all&
   else
     cd $REPO
-    git pull
+    git pull --all&
     cd ..
   fi
 done

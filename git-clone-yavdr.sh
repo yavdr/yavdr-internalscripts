@@ -7,9 +7,14 @@ REPOS="yavdr yavdr-addon-asunder yavdr-addon-chromium yavdr-addon-claws-mail yav
 for REPO in $REPOS
 do
   if [ ! -d $REPO ]; then
-    git clone git@github.com:yavdr/${REPO}.git
+    if [ "$READONLY" = "1" ]; then
+      git clone git://github.com/yavdr/${REPO}.git
+    else
+      git clone git@github.com:yavdr/${REPO}.git
+    fi
     cd $REPO
     git pull --all&
+    cd ..
   else
     cd $REPO
     git pull --all&

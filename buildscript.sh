@@ -15,13 +15,13 @@ else
 fi
 
 if [ -z $3 ]; then
-  DIST="lucid"
+  DIST="natty"
 else
   DIST=$3
 fi
 
 PACKAGE_VERSION="10000"
-YAVDR_VERSION="1."
+YAVDR_VERSION=""
 VERSION_SUFFIX="-0yavdr0~${DIST}" #
 
 echo " -- build packet ${PACKAGE_NAME} for ${REPO}"
@@ -41,6 +41,7 @@ git clone -q "git://github.com/yavdr/${PACKAGE_NAME}.git" "${PACKAGE_NAME}"
 # look to git version
 cd $PACKAGE_NAME
 PACKAGE_VERSION=`git rev-list --all | wc -l`
+PACKAGE_VERSION=`date +"%Y%m%d%H%M%S"`
 COMMIT_ID=`git rev-parse HEAD`
 echo " ---- package version ${PACKAGE_VERSION}"
 cd ..

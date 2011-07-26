@@ -35,7 +35,12 @@ fi
 
 # clone git repo
 echo " --- git clone git://github.com/yavdr/${PACKAGE_NAME}.git"
-git clone -b $REPO -q "git://github.com/yavdr/${PACKAGE_NAME}.git" "${PACKAGE_NAME}"
+if [ $REPO == "unstable" ]; then
+  GITREPO="master";
+else
+  GITREPO="$REPO";
+fi
+git clone -b $GITREPO -q "git://github.com/yavdr/${PACKAGE_NAME}.git" "${PACKAGE_NAME}"
 
 
 # look to git version

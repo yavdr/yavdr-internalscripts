@@ -37,10 +37,11 @@ do
     RELEASE="$(expr "$RELEASE" : '\([0-9]*\)')yavdr$(($(expr "$RELEASE" : '[0-9]*[a-z]*\([0-9]*\)')+1))~$DIST"
     sudo apt-get build-dep $PACKAGE
     dch -v "$VERSION-$RELEASE" "rebuild" --distribution=$DIST --urgency=medium
-    debuild -S -sa
+    debuild -S -sa || exit;
     cd ..
-    echo "${NAME}_${VERSION}-${RELEASE}_source.changes"
-    dput ppa:yavdr/unstable-vdr "${NAME}_${VERSION}-${RELEASE}_source.changes"
+    FILEVERSION=$(echo $VERSION |cut -d ':' -f 2)
+    echo "${NAME}_${FILEVERSION}-${RELEASE}_source.changes"
+    dput ppa:yavdr/unstable-vdr "${NAME}_${FILEVERSION}-${RELEASE}_source.changes"
   fi
 done
 

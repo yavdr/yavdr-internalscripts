@@ -35,7 +35,7 @@ do
       fi
     done
     RELEASE="$(expr "$RELEASE" : '\([0-9]*\)')yavdr$(($(expr "$RELEASE" : '[0-9]*[a-z]*\([0-9]*\)')+1))~$DIST"
-    dch -v "$VERSION-$RELEASE" "rebuild" --distribution=$DIST
+    dch -v "$VERSION-$RELEASE" "rebuild" --distribution=$DIST --urgency=medium
     debuild -S -sa
     cd ..
     echo "${NAME}_${VERSION}-${RELEASE}_source.changes"

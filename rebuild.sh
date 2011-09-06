@@ -35,7 +35,7 @@ do
       fi
     done
     RELEASE="$(expr "$RELEASE" : '\([0-9]*\)')yavdr$(($(expr "$RELEASE" : '[0-9]*[a-z]*\([0-9]*\)')+1))~$DIST"
-    sudo apt-get build-dep $PACKAGE
+#    sudo apt-get build-dep $PACKAGE
     dch -v "$VERSION-$RELEASE" "rebuild" --distribution=$DIST --urgency=medium
     debuild -S -sa || exit;
     cd ..

@@ -77,6 +77,7 @@ vdr-plugin-mp3 \
 vdr-plugin-muggle \
 vdr-plugin-music \
 vdr-plugin-newsticker \
+vdr-plugin-noepg \
 vdr-plugin-nordlichtsepg \
 vdr-plugin-osdpip \
 vdr-plugin-osdserver \

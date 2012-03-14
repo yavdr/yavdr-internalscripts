@@ -60,7 +60,6 @@ vdr-plugin-graphtft \
 vdr-plugin-image \
 vdr-plugin-imdbsearch \
 vdr-plugin-imonlcd \
-vdr-plugin-infosatepg \
 vdr-plugin-iptv \
 vdr-plugin-karaoke \
 vdr-plugin-lastfm \
@@ -71,7 +70,6 @@ vdr-plugin-live \
 vdr-plugin-loadepg \
 vdr-plugin-mailbox \
 vdr-plugin-markad \
-vdr-plugin-mcli \
 vdr-plugin-menuorg \
 vdr-plugin-mlist \
 vdr-plugin-mousemate \
@@ -79,7 +77,6 @@ vdr-plugin-mp3 \
 vdr-plugin-muggle \
 vdr-plugin-music \
 vdr-plugin-newsticker \
-vdr-plugin-noepgmenu \
 vdr-plugin-nordlichtsepg \
 vdr-plugin-osdpip \
 vdr-plugin-osdserver \
@@ -103,7 +100,6 @@ vdr-plugin-remote \
 vdr-plugin-remoteosd \
 vdr-plugin-remotetimers \
 vdr-plugin-restfulapi \
-vdr-plugin-rotor \
 vdr-plugin-rotorng \
 vdr-plugin-rssreader \
 vdr-plugin-scheduler \
@@ -137,7 +133,6 @@ vdr-plugin-ttxtsubs \
 vdr-plugin-tvonscreen \
 vdr-plugin-tvtv \
 vdr-plugin-undelete \
-vdr-plugin-upnp \
 vdr-plugin-vcd \
 vdr-plugin-vdrc \
 vdr-plugin-vdrcd \

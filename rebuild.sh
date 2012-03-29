@@ -58,7 +58,6 @@ vdr-plugin-games \
 vdr-plugin-graphlcd \
 vdr-plugin-graphtft \
 vdr-plugin-image \
-vdr-plugin-imdbsearch \
 vdr-plugin-imonlcd \
 vdr-plugin-iptv \
 vdr-plugin-karaoke \
@@ -67,7 +66,6 @@ vdr-plugin-lcdproc \
 vdr-plugin-lcr \
 vdr-plugin-lircrc \
 vdr-plugin-live \
-vdr-plugin-loadepg \
 vdr-plugin-mailbox \
 vdr-plugin-markad \
 vdr-plugin-menuorg \

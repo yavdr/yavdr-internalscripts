@@ -94,7 +94,6 @@ vdr-plugin-pvr350 \
 vdr-plugin-pvrinput \
 vdr-plugin-radio \
 vdr-plugin-radiolist \
-vdr-plugin-recstatus \
 vdr-plugin-remote \
 vdr-plugin-remoteosd \
 vdr-plugin-remotetimers \

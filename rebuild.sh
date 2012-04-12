@@ -43,6 +43,7 @@ vdr-plugin-dvd \
 vdr-plugin-dvdswitch \
 vdr-plugin-dynamite \
 vdr-plugin-eepg \
+vdr-plugin-epgfixer \
 vdr-plugin-epgsearch \
 vdr-plugin-epgsync \
 vdr-plugin-extb \

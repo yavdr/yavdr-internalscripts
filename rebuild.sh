@@ -135,7 +135,9 @@ vdr-plugin-undelete \
 vdr-plugin-vcd \
 vdr-plugin-vdrc \
 vdr-plugin-vdrcd \
+vdr-plugin-vdrmanager \
 vdr-plugin-vdrrip \
+vdr-plugin-vnsiserver \
 vdr-plugin-vompserver \
 vdr-plugin-webvideo \
 vdr-plugin-wirbelscan \

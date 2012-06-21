@@ -26,6 +26,7 @@ vdr-plugin-burn \
 vdr-plugin-calc \
 vdr-plugin-cdda \
 vdr-plugin-cdplayer \
+vdr-plugin-chanman \
 vdr-plugin-channellists \
 vdr-plugin-chanorg \
 vdr-plugin-cinebars \

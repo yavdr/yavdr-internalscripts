@@ -27,6 +27,7 @@ vdr-plugin-channellists \
 vdr-plugin-cinebars \
 vdr-plugin-clock \
 vdr-plugin-control \
+vdr-plugin-dbus \
 vdr-plugin-devstatus \
 vdr-plugin-dummydevice \
 vdr-plugin-duplicates \

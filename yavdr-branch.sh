@@ -98,6 +98,7 @@ mkdir -p $WORKINGDIR
 for PACKAGE in $PACKAGES
 do
   cd $WORKINGDIR
+  echo
   echo processing $PACKAGE
 
   if [ ! -d $PACKAGE ]

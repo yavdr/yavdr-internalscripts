@@ -7,11 +7,15 @@ REMOTE=origin
 TARGET=testing-$VERSION
 OPTTARGET=
 WORKINGDIR=/tmp/$0
+PACKAGES=
 
-while getopts "b:r:t:u:v:w:" opt; do
+while getopts "b:p:r:t:u:v:w:" opt; do
   case $opt in
     b)
       BASE=$OPTARG
+      ;;
+    p)
+      PACKAGES=$OPTARG
       ;;
     r)
       REMOTE=$OPTARG
@@ -50,13 +54,16 @@ echo "remote = $REMOTE"
 echo "target = $TARGET"
 echo "working dir = $WORKINGDIR"
 
-if [ ! -f yavdr-$VERSION-packages.sh ]
+if [ -z "$PACKAGES" ]
 then
-  echo "package-list for version $VERSION not found." >&2
-  exit 1
-fi
+  if [ ! -f yavdr-$VERSION-packages.sh ]
+  then
+    echo "package-list for version $VERSION not found." >&2
+    exit 1
+  fi
 
-. ./yavdr-$VERSION-packages.sh
+  . ./yavdr-$VERSION-packages.sh
+fi
 
 echo $REMOTE/$BASE to $TARGET
 

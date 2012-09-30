@@ -102,6 +102,8 @@ echo $REMOTE/$BASE to $TARGET
 
 mkdir -p $WORKINGDIR
 
+FAILED=
+
 for PACKAGE in $PACKAGES
 do
   cd $WORKINGDIR
@@ -114,6 +116,7 @@ do
     if [ $? -ne 0 ]
     then
       echo "can't clone $PACKAGE, skipping" >&2
+      FAILED=$FAILED $PACKAGE
       continue
     fi
   fi
@@ -124,6 +127,7 @@ do
   if [ $? -ne 0 ]
   then
     echo "can't update $PACKAGE, skipping" >&2
+    FAILED=$FAILED $PACKAGE
     continue
   fi
 
@@ -132,6 +136,7 @@ do
   if [ $? -ne 0 ]
   then
     echo "can't find base branch $BASE, skipping package" >&2
+    FAILED=$FAILED $PACKAGE
     continue
   fi
 
@@ -143,6 +148,7 @@ do
     if [ $? -ne 0 ]
     then
       echo "can't create base branch $BASE, skipping" >&2
+      FAILED=$FAILED $PACKAGE
       continue
     fi
   else
@@ -150,12 +156,14 @@ do
     if [ $? -ne 0 ]
     then
       echo "can't checkout base branch $BASE, skipping" >&2
+      FAILED=$FAILED $PACKAGE
       continue
     fi
     git pull
     if [ $? -ne 0 ]
     then
       echo "can't update base branch $BASE, skipping" >&2
+      FAILED=$FAILED $PACKAGE
       continue
     fi
   fi
@@ -174,12 +182,14 @@ do
       if [ $? -ne 0 ]
       then
         echo "can't create target branch $TARGET, skipping..." >&2
+        FAILED=$FAILED $PACKAGE
       else
         echo "pushing to $REMOTE..."
         git push -u $REMOTE $TARGET
       fi
     else
       echo "unexpected local branch $TARGET, skipping" >&2
+      FAILED=$FAILED $PACKAGE
     fi
     continue
   fi
@@ -193,6 +203,7 @@ do
     if [ $? -ne 0 ]
     then
       echo "can't create local target branch $TARGET, skipping" >&2
+      FAILED=$FAILED $PACKAGE
       continue
     fi
   else  
@@ -200,12 +211,14 @@ do
     if [ $? -ne 0 ]
     then
       echo "can't checkout local target branch $TARGET, skipping" >&2
+      FAILED=$FAILED $PACKAGE
       continue
     fi
     git pull
     if [ $? -ne 0 ]
     then
       echo "can't update local target branch $TARGET, skipping" >&2
+      FAILED=$FAILED $PACKAGE
       continue
     fi
   fi
@@ -216,9 +229,17 @@ do
   if [ $? -ne 0 ]
   then
     echo "merge failed, skipping" >&2
+    FAILED=$FAILED $PACKAGE
     continue
   fi
 
   echo "pushing to $REMOTE..."
   git push -u $REMOTE $TARGET
 done
+
+if [ -n "$FAILED" ]
+then
+  echo "failed to update following packages:"
+  echo "$FAILED"
+fi
+

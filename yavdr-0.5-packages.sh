@@ -24,6 +24,7 @@ yavdr-backup \
 yavdr-base \
 yavdr-desktop \
 yavdr-dev \
+yavdr-doc \
 yavdr-dvb \
 yavdr-essential \
 yavdr-hardware-displaylink \

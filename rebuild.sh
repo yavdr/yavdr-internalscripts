@@ -5,8 +5,9 @@
 #DIST=$DISTRIB_CODENAME
 #DIST="lucid"
 #DIST="natty"
-DIST="oneiric"
-#DIST="precise"
+#DIST="oneiric"
+DIST="precise"
+#DIST="quantal"
 
 mkdir /tmp/build
 
@@ -70,6 +71,7 @@ vdr-plugin-lircrc \
 vdr-plugin-live \
 vdr-plugin-mailbox \
 vdr-plugin-markad \
+vdr-plugin-mcli \
 vdr-plugin-menuorg \
 vdr-plugin-mlist \
 vdr-plugin-mousemate \
@@ -87,6 +89,7 @@ vdr-plugin-picselshow \
 vdr-plugin-pilot \
 vdr-plugin-pim \
 vdr-plugin-pin \
+vdr-plugin-play \
 vdr-plugin-playlist \
 vdr-plugin-podcatcher \
 vdr-plugin-powermate \
@@ -130,6 +133,7 @@ vdr-plugin-timeline \
 vdr-plugin-timersync \
 vdr-plugin-trayopenng \
 vdr-plugin-ttxtsubs \
+vdr-plugin-tvguide \
 vdr-plugin-tvonscreen \
 vdr-plugin-tvtv \
 vdr-plugin-undelete \

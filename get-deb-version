@@ -1,0 +1,39 @@
+#!/usr/bin/awk -f
+
+# usage:
+# dpkg-parsechangelog --format dpkg | awk -f get-upstream-version
+
+# output:
+# upstream part of debian version without epoch and debian-revision
+
+function get_version(line) {
+  if (line ~ /^Version: /) {
+    sub(/^Version: /, "", line);
+    return line;
+  }
+  return "";
+}
+
+function get_upstream(version) {
+  upstream = version;
+  sub(/-[^-]*$/, "", upstream);
+  if (upstream ~ /^[0-9]*:/) {
+    sub(/^[0-9]*:/, "", upstream);
+  }
+  return upstream;
+}
+
+function get_debianrevision(version) {
+  debrev = substr(version, match(version, /-[^-]*$/) + 1);
+  return debrev;
+}
+
+{
+  version = get_version($0);
+  if (version != "") {
+    print "PACKAGE_VERSION="version;
+    print "UPSTREAM_VERSION="get_upstream(version);
+    print "DEBIAN_REVISION="get_debianrevision(version);
+  }
+}
+

@@ -75,6 +75,7 @@ vdr-plugin-osdteletext \
 vdr-plugin-osdtest256 \
 vdr-plugin-pilot \
 vdr-plugin-pin \
+vdr-plugin-play \
 vdr-plugin-powermate \
 vdr-plugin-pvr350 \
 vdr-plugin-radio \

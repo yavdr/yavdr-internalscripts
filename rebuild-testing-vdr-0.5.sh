@@ -87,7 +87,9 @@ vdr-plugin-rssreader \
 vdr-plugin-scheduler \
 vdr-plugin-screenshot \
 vdr-plugin-serial \
+vdr-plugin-skinelchi \
 vdr-plugin-skinenigmang \
+vdr-plugin-skinnopacity \
 vdr-plugin-skinpearlhd \
 vdr-plugin-skinsoppalusikka \
 vdr-plugin-sleeptimer \
@@ -105,10 +107,12 @@ vdr-plugin-svdrpservice \
 vdr-plugin-systeminfo \
 vdr-plugin-targavfd \
 vdr-plugin-text2skin \
+vdr-plugin-timeline \
 vdr-plugin-timersync \
 vdr-plugin-trayopenng \
 vdr-plugin-ttxtsubs \
 vdr-plugin-tvonscreen \
+vdr-plugin-tvguide \
 vdr-plugin-tvtv \
 vdr-plugin-undelete \
 vdr-plugin-vdrmanager \

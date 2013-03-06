@@ -27,11 +27,9 @@ vdr-plugin-channellists \
 vdr-plugin-cinebars \
 vdr-plugin-clock \
 vdr-plugin-control \
-vdr-plugin-dbus \
 vdr-plugin-devstatus \
 vdr-plugin-dummydevice \
 vdr-plugin-duplicates \
-vdr-plugin-dvbhddevice \
 vdr-plugin-dvd \
 vdr-plugin-dvdswitch \
 vdr-plugin-eepg \
@@ -57,10 +55,12 @@ vdr-plugin-karaoke \
 vdr-plugin-lastfm \
 vdr-plugin-lcdproc \
 vdr-plugin-lcr \
+vdr-plugin-lgcontrol \
 vdr-plugin-lircrc \
 vdr-plugin-live \
 vdr-plugin-mailbox \
 vdr-plugin-markad \
+vdr-plugin-mcli \
 vdr-plugin-menuorg \
 vdr-plugin-mlist \
 vdr-plugin-mousemate \
@@ -89,7 +89,6 @@ vdr-plugin-screenshot \
 vdr-plugin-serial \
 vdr-plugin-skinelchi \
 vdr-plugin-skinenigmang \
-vdr-plugin-skinnopacity \
 vdr-plugin-skinpearlhd \
 vdr-plugin-skinsoppalusikka \
 vdr-plugin-sleeptimer \
@@ -111,10 +110,11 @@ vdr-plugin-timeline \
 vdr-plugin-timersync \
 vdr-plugin-trayopenng \
 vdr-plugin-ttxtsubs \
-vdr-plugin-tvonscreen \
 vdr-plugin-tvguide \
+vdr-plugin-tvonscreen \
 vdr-plugin-tvtv \
 vdr-plugin-undelete \
+vdr-plugin-upnp \
 vdr-plugin-vdrmanager \
 vdr-plugin-vnsiserver \
 vdr-plugin-vompserver \
@@ -126,7 +126,8 @@ vdr-plugin-xmltv2vdr \
 vdr-plugin-xvdr \
 vdr-plugin-yaepghd \
 vdr-plugin-zaphistory \
-vdr-plugin-zappilot"
+vdr-plugin-zappilot \
+vdr-tft-pearlhd"
 
 for PACKAGE in $PACKAGES
 do

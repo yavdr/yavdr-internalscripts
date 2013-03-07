@@ -8,8 +8,6 @@ STAGE="testing"
 mkdir /tmp/build
 
 PACKAGES="dfatmo \
-vdr-addon-avahi-mounter \
-vdr-addon-epgdata2vdr \
 vdr-plugin-alcd \
 vdr-plugin-arghdirector \
 vdr-plugin-atmo \

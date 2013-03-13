@@ -127,7 +127,7 @@ vdr-plugin-tvonscreen \
 vdr-plugin-tvtv \
 vdr-plugin-undelete \
 vdr-plugin-upnp \
-vdr-plugin-vdc \
+vdr-plugin-vcd \
 vdr-plugin-vdrc \
 vdr-plugin-vdrcd \
 vdr-plugin-vdrmanager \

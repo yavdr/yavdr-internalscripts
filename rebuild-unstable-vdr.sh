@@ -15,6 +15,7 @@ vdr-plugin-atmo \
 vdr-plugin-atscepg \
 vdr-plugin-autosort \
 vdr-plugin-autostart \
+vdr-plugin-avahi4vdr \
 vdr-plugin-avards \
 vdr-plugin-bewegung \
 vdr-plugin-bgprocess \

@@ -7,7 +7,8 @@ STAGE="unstable"
 
 mkdir /tmp/build
 
-PACKAGES="vdr-plugin-arghdirector \
+PACKAGES="dfatmo \
+vdr-plugin-arghdirector \
 vdr-plugin-atmo \
 vdr-plugin-atscepg \
 vdr-plugin-autosort \
@@ -22,6 +23,7 @@ vdr-plugin-chanman \
 vdr-plugin-channellists \
 vdr-plugin-cinebars \
 vdr-plugin-clock \
+vdr-plugin-control \
 vdr-plugin-devstatus \
 vdr-plugin-dummydevice \
 vdr-plugin-duplicates \
@@ -31,6 +33,7 @@ vdr-plugin-eepg \
 vdr-plugin-epgfixer \
 vdr-plugin-epgsearch \
 vdr-plugin-epgsync \
+vdr-plugin-extb \
 vdr-plugin-externalplayer \
 vdr-plugin-extrecmenu \
 vdr-plugin-favorites \
@@ -61,12 +64,14 @@ vdr-plugin-mousemate \
 vdr-plugin-mp3 \
 vdr-plugin-muggle \
 vdr-plugin-music \
+vdr-plugin-neutrinoepg \
 vdr-plugin-newsticker \
 vdr-plugin-nordlichtsepg \
 vdr-plugin-osdpip \
 vdr-plugin-osdserver \
 vdr-plugin-osdteletext \
 vdr-plugin-osdtest256 \
+vdr-plugin-permashift \
 vdr-plugin-pilot \
 vdr-plugin-pin \
 vdr-plugin-play \
@@ -87,6 +92,7 @@ vdr-plugin-skinenigmang \
 vdr-plugin-skinnopacity \
 vdr-plugin-skinpearlhd \
 vdr-plugin-skinsoppalusikka \
+vdr-plugin-skyselectfeeds \
 vdr-plugin-sleeptimer \
 vdr-plugin-sndctl \
 vdr-plugin-softhddevice \

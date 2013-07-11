@@ -8,7 +8,6 @@ STAGE="unstable"
 mkdir /tmp/build
 
 PACKAGES="dfatmo \
-vdr-plugin-arghdirector \
 vdr-plugin-atmo \
 vdr-plugin-atscepg \
 vdr-plugin-autosort \
@@ -44,7 +43,7 @@ vdr-plugin-freecell \
 vdr-plugin-fritzbox \
 vdr-plugin-games \
 vdr-plugin-graphlcd \
-vdr-plugin-graphtft \
+vdr-plugin-graphtftng \
 vdr-plugin-image \
 vdr-plugin-imonlcd \
 vdr-plugin-iptv \

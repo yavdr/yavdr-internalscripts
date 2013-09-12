@@ -117,6 +117,7 @@ vdr-plugin-trayopenng \
 vdr-plugin-ttxtsubs \
 vdr-plugin-tvguide \
 vdr-plugin-tvonscreen \
+vdr-plugin-tvscraper \
 vdr-plugin-tvtv \
 vdr-plugin-uactivity \
 vdr-plugin-undelete \

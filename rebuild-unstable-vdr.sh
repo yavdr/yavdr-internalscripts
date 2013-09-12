@@ -4,6 +4,7 @@
 
 DIST="precise"
 STAGE="unstable"
+PPA="yavdr/unstable-vdr"
 
 mkdir /tmp/build
 
@@ -29,6 +30,7 @@ vdr-plugin-duplicates \
 vdr-plugin-dvd \
 vdr-plugin-dvdswitch \
 vdr-plugin-eepg \
+vdr-plugin-epg2vdr \
 vdr-plugin-epgfixer \
 vdr-plugin-epgsearch \
 vdr-plugin-epgsync \
@@ -70,6 +72,7 @@ vdr-plugin-osdpip \
 vdr-plugin-osdserver \
 vdr-plugin-osdteletext \
 vdr-plugin-osdtest256 \
+vdr-plugin-peer \
 vdr-plugin-permashift \
 vdr-plugin-pilot \
 vdr-plugin-pin \
@@ -88,6 +91,7 @@ vdr-plugin-seduatmo \
 vdr-plugin-serial \
 vdr-plugin-skinelchi \
 vdr-plugin-skinenigmang \
+vdr-plugin-skinflat \
 vdr-plugin-skinnopacity \
 vdr-plugin-skinpearlhd \
 vdr-plugin-skinsoppalusikka \
@@ -159,7 +163,7 @@ do
     cd ..
     FILEVERSION=$(echo $VERSION |cut -d ':' -f 2)
     echo "${NAME}_${FILEVERSION}-${RELEASE}_source.changes => ${STAGE}"
-    dput ppa:yavdr/${STAGE}-vdr "${NAME}_${FILEVERSION}-${RELEASE}_source.changes"
+    dput ppa:${PPA} "${NAME}_${FILEVERSION}-${RELEASE}_source.changes"
   fi
 done
 

@@ -4,19 +4,18 @@
 
 DIST="precise"
 STAGE="testing"
+PPA="yavdr/testing-vdr"
 
 mkdir /tmp/build
 
 PACKAGES="dfatmo \
-vdr-plugin-alcd \
-vdr-plugin-arghdirector \
 vdr-plugin-atmo \
 vdr-plugin-atscepg \
 vdr-plugin-autosort \
 vdr-plugin-autostart \
+vdr-plugin-avahi4vdr \
 vdr-plugin-bewegung \
 vdr-plugin-bgprocess \
-vdr-plugin-block \
 vdr-plugin-burn \
 vdr-plugin-calc \
 vdr-plugin-cdplayer \
@@ -31,6 +30,7 @@ vdr-plugin-duplicates \
 vdr-plugin-dvd \
 vdr-plugin-dvdswitch \
 vdr-plugin-eepg \
+vdr-plugin-epg2vdr \
 vdr-plugin-epgfixer \
 vdr-plugin-epgsearch \
 vdr-plugin-epgsync \
@@ -45,7 +45,7 @@ vdr-plugin-freecell \
 vdr-plugin-fritzbox \
 vdr-plugin-games \
 vdr-plugin-graphlcd \
-vdr-plugin-graphtft \
+vdr-plugin-graphtftng \
 vdr-plugin-image \
 vdr-plugin-imonlcd \
 vdr-plugin-iptv \
@@ -65,12 +65,15 @@ vdr-plugin-mousemate \
 vdr-plugin-mp3 \
 vdr-plugin-muggle \
 vdr-plugin-music \
+vdr-plugin-neutrinoepg \
 vdr-plugin-newsticker \
 vdr-plugin-nordlichtsepg \
 vdr-plugin-osdpip \
 vdr-plugin-osdserver \
 vdr-plugin-osdteletext \
 vdr-plugin-osdtest256 \
+vdr-plugin-peer \
+vdr-plugin-permashift \
 vdr-plugin-pilot \
 vdr-plugin-pin \
 vdr-plugin-play \
@@ -84,11 +87,15 @@ vdr-plugin-rotorng \
 vdr-plugin-rssreader \
 vdr-plugin-scheduler \
 vdr-plugin-screenshot \
+vdr-plugin-seduatmo \
 vdr-plugin-serial \
 vdr-plugin-skinelchi \
 vdr-plugin-skinenigmang \
+vdr-plugin-skinflat \
+vdr-plugin-skinnopacity \
 vdr-plugin-skinpearlhd \
 vdr-plugin-skinsoppalusikka \
+vdr-plugin-skyselectfeeds \
 vdr-plugin-sleeptimer \
 vdr-plugin-sndctl \
 vdr-plugin-softhddevice \
@@ -111,6 +118,7 @@ vdr-plugin-ttxtsubs \
 vdr-plugin-tvguide \
 vdr-plugin-tvonscreen \
 vdr-plugin-tvtv \
+vdr-plugin-uactivity \
 vdr-plugin-undelete \
 vdr-plugin-upnp \
 vdr-plugin-vdrmanager \
@@ -124,8 +132,7 @@ vdr-plugin-xmltv2vdr \
 vdr-plugin-xvdr \
 vdr-plugin-yaepghd \
 vdr-plugin-zaphistory \
-vdr-plugin-zappilot \
-vdr-tft-pearlhd"
+vdr-plugin-zappilot"
 
 for PACKAGE in $PACKAGES
 do
@@ -156,7 +163,7 @@ do
     cd ..
     FILEVERSION=$(echo $VERSION |cut -d ':' -f 2)
     echo "${NAME}_${FILEVERSION}-${RELEASE}_source.changes => ${STAGE}"
-    dput ppa:yavdr/${STAGE}-vdr "${NAME}_${FILEVERSION}-${RELEASE}_source.changes"
+    dput ppa:${PPA} "${NAME}_${FILEVERSION}-${RELEASE}_source.changes"
   fi
 done
 

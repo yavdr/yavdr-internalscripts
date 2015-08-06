@@ -32,6 +32,7 @@ yavdr-frontend \
 yavdr-hardware-displaylink \
 yavdr-hardware-mdm166a \
 yavdr-hardware-sundtek \
+yavdr-hostwakeup \
 yavdr-i18n \
 yavdr-panel \
 yavdr-plymouth-theme \

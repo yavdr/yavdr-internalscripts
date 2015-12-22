@@ -185,6 +185,7 @@ do
         FAILED=$FAILED $PACKAGE
       else
         echo "pushing to $REMOTE..."
+        git commit --allow-empty -m "force rebuild"
         git push -u $REMOTE $TARGET
       fi
     else
@@ -234,6 +235,7 @@ do
   fi
 
   echo "pushing to $REMOTE..."
+  git commit --allow-empty -m "force rebuild"
   git push -u $REMOTE $TARGET
 done
 

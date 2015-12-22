@@ -41,7 +41,6 @@ yavdr-session \
 yavdr-utils \
 yavdr-webfrontend \
 vdr-plugin-dbus2vdr \
-vdr-plugin-ddci \
 vdr-plugin-dynamite \
 vdr-plugin-noepg \
 vdr-plugin-pvrinput \

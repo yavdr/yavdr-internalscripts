@@ -8,11 +8,15 @@ TARGET=testing-$VERSION
 OPTTARGET=
 WORKINGDIR=/tmp/$0
 PACKAGES=
+FORCE=0
 
-while getopts "b:p:r:t:u:v:w:" opt; do
+while getopts "b:fp:r:t:u:v:w:" opt; do
   case $opt in
     b)
       BASE=$OPTARG
+      ;;
+    f)
+      FORCE=1
       ;;
     p)
       PACKAGES=$OPTARG
@@ -53,6 +57,10 @@ echo "base = $BASE"
 echo "remote = $REMOTE"
 echo "target = $TARGET"
 echo "working dir = $WORKINGDIR"
+if [ $FORCE = 1 ]
+then
+  echo "force rebuild with empty commit"
+fi
 
 if [ -z "$PACKAGES" ]
 then
@@ -185,7 +193,10 @@ do
         FAILED=$FAILED $PACKAGE
       else
         echo "pushing to $REMOTE..."
-        git commit --allow-empty -m "force rebuild"
+        if [ $FORCE = 1 ]
+        then
+          git commit --allow-empty -m "force rebuild"
+        fi
         git push -u $REMOTE $TARGET
       fi
     else
@@ -235,7 +246,10 @@ do
   fi
 
   echo "pushing to $REMOTE..."
-  git commit --allow-empty -m "force rebuild"
+  if [ $FORCE = 1 ]
+  then
+    git commit --allow-empty -m "force rebuild"
+  fi
   git push -u $REMOTE $TARGET
 done
 

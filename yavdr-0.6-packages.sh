@@ -40,6 +40,9 @@ yavdr-remote \
 yavdr-session \
 yavdr-utils \
 yavdr-webfrontend \
+vdr-addon-avahi-linker \
+vdr-addon-avahi-mounter \
+vdr-addon-epgdata2vdr \
 vdr-plugin-dbus2vdr \
 vdr-plugin-dynamite \
 vdr-plugin-noepg \
